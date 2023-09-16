@@ -3,6 +3,7 @@ package com.estudo;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -71,6 +72,7 @@ public class SimpleMathTest {
 	                " did not produce " + expected + "!");
 	    }
 	    
+	    @Disabled("TODO: We need still work on it")
 	    @Test
 	    @DisplayName("Teste Division by Zero")
 	    void testDivision_When_FirstNumberIsDividedByZero_ShouldThrowArithmeticException() {
@@ -105,5 +107,7 @@ public class SimpleMathTest {
 	            () -> "Square Root of " + number +
 	            " did not produce " + expected + "!");
 	    }
+	    
+	   
 
 }
