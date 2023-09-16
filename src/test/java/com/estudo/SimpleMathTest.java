@@ -1,15 +1,19 @@
 package com.estudo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import com.estudo.entities.SimpleMath;
 
+@DisplayName("Test Math Operations is SimpleMath Class")
 public class SimpleMathTest {
 	
 	 @Test
-	    void testSum() {
+	 @DisplayName("Test 6.2 + 2 = 8.2")
+	    void testSum_When_SizDotTwoIsAddesByTwo_ShouldReturnEightDotTwo() {
 	        SimpleMath math = new SimpleMath();
 	        double firstNumber = 6.2D;
 	        double secondNumber = 2D;
@@ -23,6 +27,7 @@ public class SimpleMathTest {
 	    }
 	    
 	    @Test
+	    @DisplayName("Test 6.2 - 2 = 4.2")
 	    void testSubtraction() {
 	        SimpleMath math = new SimpleMath();
 	        double firstNumber = 6.2D;
@@ -37,6 +42,7 @@ public class SimpleMathTest {
 	    }
 	    
 	    @Test
+	    @DisplayName("Test 6.2 * 2 = 12.4")
 	    void testMultiplication() {
 	        SimpleMath math = new SimpleMath();
 	        double firstNumber = 6.2D;
@@ -51,6 +57,7 @@ public class SimpleMathTest {
 	    }
 	    
 	    @Test
+	    @DisplayName("Test 6.2 / 2 = 3.1")
 	    void testDivision() {
 	        SimpleMath math = new SimpleMath();
 	        double firstNumber = 6.2D;
@@ -65,6 +72,13 @@ public class SimpleMathTest {
 	    }
 	    
 	    @Test
+	    @DisplayName("Teste Division by Zero")
+	    void testDivision_When_FirstNumberIsDividedByZero_ShouldThrowArithmeticException() {
+	    	fail();
+	    }
+	    
+	    @Test
+	    @DisplayName("Test (6.2 + 2)/2 = 4.1")
 	    void testMean() {
 	        SimpleMath math = new SimpleMath();
 	        double firstNumber = 6.2D;
@@ -79,6 +93,7 @@ public class SimpleMathTest {
 	    }
 
 	    @Test
+	    @DisplayName("Teste Square Root of 81 = 9")
 	    void testSquareRoot() {
 	        SimpleMath math = new SimpleMath();
 	        double number = 81D;
