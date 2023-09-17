@@ -1,4 +1,4 @@
-package com.estudo.entities;
+package com.estudo.math;
 
 public class SimpleMath {
 	
