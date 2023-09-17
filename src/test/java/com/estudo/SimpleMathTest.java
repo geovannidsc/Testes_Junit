@@ -3,6 +3,10 @@ package com.estudo;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -12,10 +16,38 @@ import com.estudo.entities.SimpleMath;
 @DisplayName("Test Math Operations is SimpleMath Class")
 public class SimpleMathTest {
 	
+	SimpleMath math;
+	
+	@BeforeAll
+	static void setup() {
+		
+		System.out.println("Running @BeforeAll method!");
+	}
+	
+	@AfterAll
+	static void cleanup() {
+		
+		System.out.println("Running @AfterAll method!");
+	}
+	
+	@BeforeEach
+	 void beforeEachMethod() {
+		math = new SimpleMath();
+		System.out.println("Running @BeforeEach method!");
+	}
+	
+	@AfterEach
+	 void afterEachMethod() {
+		math = new SimpleMath();
+		System.out.println("Running @AfterEach method!");
+	}
+	
 	 @Test
 	 @DisplayName("Test 6.2 + 2 = 8.2")
 	    void testSum_When_SizDotTwoIsAddesByTwo_ShouldReturnEightDotTwo() {
-	        SimpleMath math = new SimpleMath();
+		
+		 System.out.println("Test 6.2 + 2 = 8.2");
+		 
 	        double firstNumber = 6.2D;
 	        double secondNumber = 2D;
 	        
@@ -30,7 +62,8 @@ public class SimpleMathTest {
 	    @Test
 	    @DisplayName("Test 6.2 - 2 = 4.2")
 	    void testSubtraction() {
-	        SimpleMath math = new SimpleMath();
+	    	System.out.println("Test 6.2 - 2 = 4.2");
+	    	
 	        double firstNumber = 6.2D;
 	        double secondNumber = 2D;
 	        
@@ -45,7 +78,8 @@ public class SimpleMathTest {
 	    @Test
 	    @DisplayName("Test 6.2 * 2 = 12.4")
 	    void testMultiplication() {
-	        SimpleMath math = new SimpleMath();
+	    	System.out.println("Test 6.2 * 2 = 12.4");
+	    	
 	        double firstNumber = 6.2D;
 	        double secondNumber = 2D;
 	        
@@ -60,7 +94,9 @@ public class SimpleMathTest {
 	    @Test
 	    @DisplayName("Test 6.2 / 2 = 3.1")
 	    void testDivision() {
-	        SimpleMath math = new SimpleMath();
+	    	
+	    	System.out.println("Test 6.2 / 2 = 3.1");
+	    	
 	        double firstNumber = 6.2D;
 	        double secondNumber = 2D;
 	        
@@ -82,7 +118,8 @@ public class SimpleMathTest {
 	    @Test
 	    @DisplayName("Test (6.2 + 2)/2 = 4.1")
 	    void testMean() {
-	        SimpleMath math = new SimpleMath();
+	    	System.out.println("Test (6.2 + 2)/2 = 4.1");
+	    	
 	        double firstNumber = 6.2D;
 	        double secondNumber = 2D;
 	        
@@ -97,7 +134,9 @@ public class SimpleMathTest {
 	    @Test
 	    @DisplayName("Teste Square Root of 81 = 9")
 	    void testSquareRoot() {
-	        SimpleMath math = new SimpleMath();
+	    	
+	    	System.out.println("Teste Square Root of 81 = 9");
+	    	
 	        double number = 81D;
 	        double expected = 9D;
 	        
