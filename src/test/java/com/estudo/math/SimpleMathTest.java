@@ -1,6 +1,8 @@
 package com.estudo.math;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import java.util.stream.Stream;
 
@@ -12,6 +14,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 @DisplayName("Test Math Operations with Parameters")
 public class SimpleMathTest {
@@ -73,6 +76,17 @@ public class SimpleMathTest {
 	                () -> firstNumber + "/" + secondNumber +
 	                " did not produce " + expected + "!");
 	    }
+		
+		
+		@ParameterizedTest
+		@ValueSource(strings = {"Pele","Senna", "Keith Moon"})
+		void testValueSource(String firstName) {
+			System.out.println(firstName);
+			
+			assertNotNull(firstName);
+		}
+		
+		
 	    
 	    
 	   public static Stream<Arguments> testDivisionInputParameters(){
