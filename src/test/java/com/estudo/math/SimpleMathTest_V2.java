@@ -1,4 +1,4 @@
-package com.estudo;
+package com.estudo.math;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -10,10 +10,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.estudo.math.SimpleMath;
-
 @DisplayName("Test Math Operations is SimpleMath Class")
-public class SimpleMathTest {
+public class SimpleMathTest_V2 {
 	
 	SimpleMath math;
 	
