@@ -10,7 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.estudo.entities.SimpleMath;
+import com.estudo.math.SimpleMath;
 
 @DisplayName("Test Math Operations is SimpleMath Class")
 public class SimpleMathTest {

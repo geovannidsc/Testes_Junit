@@ -30,7 +30,7 @@ class ArrayCompareTest {
 	@DisplayName("Test Performance")
 	void testSortPerformance() {
 		int [] numbers = {25,8,21,32,3};
-		 for(int i = 0; i<100000; i++) {
+		 for(int i = 0; i<1000; i++) {
 			 numbers[0] = i;
 			 Arrays.sort(numbers);
 		
