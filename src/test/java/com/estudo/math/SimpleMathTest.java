@@ -11,7 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.CsvSource;
 
 @DisplayName("Test Math Operations with Parameters")
 public class SimpleMathTest {
@@ -42,6 +42,7 @@ public class SimpleMathTest {
 	}
 	
 	 
+	/*
 		@DisplayName("Test Division with Parameters")
 	    @ParameterizedTest
 	    @MethodSource("testDivisionInputParameters")
@@ -54,7 +55,24 @@ public class SimpleMathTest {
 	                () -> firstNumber + "/" + secondNumber +
 	                " did not produce " + expected + "!");
 	    }
-	    
+	    */
+		
+		@DisplayName("Test Division with Parameters")
+	    @ParameterizedTest
+	    @CsvSource({
+	    	"6.2,2,3.1",
+	    	"71,14,5.07",
+	    	"18.3,3.1,5.90"
+	    })
+	    void testDivision(double firstNumber,double secondNumber, double expected  ) {
+	    	
+	        System.out.println("Test "+ firstNumber+ " / "+ secondNumber+ " = "+expected);
+	        Double actual = math.division(firstNumber, secondNumber);
+	        
+	        assertEquals(expected, actual, 2D,
+	                () -> firstNumber + "/" + secondNumber +
+	                " did not produce " + expected + "!");
+	    }
 	    
 	    
 	   public static Stream<Arguments> testDivisionInputParameters(){
